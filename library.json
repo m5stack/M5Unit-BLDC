@@ -1,14 +1,14 @@
 {
-  "name": "M5UnitBLDC",
+  "name": "M5Unit-BLDC",
   "description": "Library for M5Stack Unit BLDC",
-  "keywords": "M5Stack M5UnitBLDC",
+  "keywords": "M5Stack M5Unit-BLDC",
   "authors": {
     "name": "M5Stack",
     "url": "http://www.m5stack.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/m5stack/M5UnitBLDC.git"
+    "url": "https://github.com/m5stack/M5Unit-BLDC.git"
   },
   "version": "1.0.0",
   "frameworks": "arduino",

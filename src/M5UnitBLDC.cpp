@@ -92,7 +92,6 @@ uint16_t M5UnitBLDC::getPWM(void) {
 }
 
 bool M5UnitBLDC::setRPM(float rpm) {
-    uint8_t tx_data[4];
     return writeBytes(_addr, UNIT_BLDC_SET_RPM_REG, (uint8_t *)&rpm, 4);
 }
 
@@ -184,7 +183,7 @@ bool M5UnitBLDC::getPID(float *p, float *i, float *d) {
 }
 
 bool M5UnitBLDC::setDirection(unit_bldc_control_direction_t dir) {
-    uint8_t tx_data[4];
+    uint8_t tx_data[1];
     tx_data[0] = dir;
     return writeBytes(_addr, UNIT_BLDC_DIR_REG, tx_data, 1);
 }
@@ -206,8 +205,6 @@ uint8_t M5UnitBLDC::getMotorStatus(void) {
 }
 
 bool M5UnitBLDC::setMotorModel(uint8_t model) {
-    uint8_t tx_data[4];
-
     return writeBytes(_addr, UNIT_BLDC_MOTOR_CONFIG_REG, (uint8_t *)&model, 1);
 }
 
@@ -220,8 +217,6 @@ uint8_t M5UnitBLDC::getMotorModel(void) {
 }
 
 bool M5UnitBLDC::setMotorPolePairs(uint8_t pairs) {
-    uint8_t tx_data[4];
-
     return writeBytes(_addr, UNIT_BLDC_MOTOR_CONFIG_REG + 1, (uint8_t *)&pairs,
                       1);
 }
@@ -235,9 +230,8 @@ uint8_t M5UnitBLDC::getMotorPolePairs(void) {
 }
 
 bool M5UnitBLDC::saveMotorDataToFlash(void) {
-    uint8_t tx_data[4];
+    uint8_t tx_data[1];
     tx_data[0] = 1;
-
     return writeBytes(_addr, SAVE_DATA_TO_FLASH_REG, tx_data, 1);
 }
 
@@ -254,7 +248,7 @@ uint8_t M5UnitBLDC::getFirmwareVersion(void) {
 }
 
 bool M5UnitBLDC::setI2CAddress(uint8_t addr) {
-    uint8_t tx_data[4];
+    uint8_t tx_data[1];
     tx_data[0] = addr;
     if (writeBytes(_addr, I2C_ADDRESS_REG, tx_data, 1)) {
         _addr = addr;

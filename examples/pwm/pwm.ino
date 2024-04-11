@@ -1,3 +1,17 @@
+/**
+ * @file pwm.ino
+ * @author SeanKwok (shaoxiang@m5stack.com)
+ * @brief
+ * @version 0.1
+ * @date 2024-04-11
+ *
+ *
+ * @Hardwares: M5Core + Unit BLDC
+ * @Platform Version: Arduino M5Stack Board Manager v2.1.1
+ * @Dependent Library:
+ * M5UnitBLDC: https://github.com/m5stack/M5Unit-BLDC
+ */
+
 #include "M5UnitBLDC.h"
 
 M5UnitBLDC driver;
