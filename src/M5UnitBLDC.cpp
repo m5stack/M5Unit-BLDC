@@ -151,8 +151,8 @@ bool M5UnitBLDC::setPID(float p, float i, float d) {
     uint8_t tx_data[12];
 
     int32_t p_int = p * 100;
-    int32_t i_int = p * 100;
-    int32_t d_int = p * 100;
+    int32_t i_int = i * 100;
+    int32_t d_int = d * 100;
 
     memcpy(tx_data, (uint8_t *)&p_int, 4);
     memcpy(tx_data + 4, (uint8_t *)&i_int, 4);
