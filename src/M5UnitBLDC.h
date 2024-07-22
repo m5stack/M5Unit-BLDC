@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
 #ifndef __UNIT_BLDC_H
 #define __UNIT_BLDC_H
 
@@ -25,15 +30,9 @@
 #define FIRMWARE_VERSION_REG               0xFE
 #define I2C_ADDRESS_REG                    0xFF
 
-typedef enum {
-    OPEN_LOOP_CTL_MODE = 0,
-    CLOSED_LOOP_CTL_MODE
-} unit_bldc_control_mode_t;
+typedef enum { OPEN_LOOP_CTL_MODE = 0, CLOSED_LOOP_CTL_MODE } unit_bldc_control_mode_t;
 
-typedef enum {
-    MOTOR_FORWARD = 0,
-    MOTOR_BACKWARD
-} unit_bldc_control_direction_t;
+typedef enum { MOTOR_FORWARD = 0, MOTOR_BACKWARD } unit_bldc_control_direction_t;
 
 typedef enum {
     MOTOR_STANDBY = 0,
@@ -64,8 +63,8 @@ class M5UnitBLDC {
      * @param speed i2c speed
      * @return bool true=success / false=fail
      */
-    bool begin(TwoWire *wire = &Wire, uint8_t addr = UNIT_BLDC_ADDR,
-               uint8_t sda = 25, uint8_t scl = 21, uint32_t speed = 8000000L);
+    bool begin(TwoWire *wire = &Wire, uint8_t addr = UNIT_BLDC_ADDR, uint8_t sda = 25, uint8_t scl = 21,
+               uint32_t speed = 8000000L);
 
     /**
      * @brief Set the Mode object

@@ -1,4 +1,10 @@
-/**
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
  * @file rpm.ino
  * @author SeanKwok (shaoxiang@m5stack.com)
  * @brief

@@ -1,7 +1,11 @@
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
 #include "M5UnitBLDC.h"
 
-bool M5UnitBLDC::writeBytes(uint8_t addr, uint8_t reg, uint8_t *buffer,
-                            uint8_t length) {
+bool M5UnitBLDC::writeBytes(uint8_t addr, uint8_t reg, uint8_t *buffer, uint8_t length) {
     _wire->beginTransmission(addr);
     _wire->write(reg);
     for (int i = 0; i < length; i++) {
@@ -15,8 +19,7 @@ bool M5UnitBLDC::writeBytes(uint8_t addr, uint8_t reg, uint8_t *buffer,
     }
 }
 
-bool M5UnitBLDC::readBytes(uint8_t addr, uint8_t reg, uint8_t *buffer,
-                           uint8_t length) {
+bool M5UnitBLDC::readBytes(uint8_t addr, uint8_t reg, uint8_t *buffer, uint8_t length) {
     uint8_t index = 0;
     _wire->beginTransmission(addr);
     _wire->write(reg);
@@ -48,8 +51,7 @@ float M5UnitBLDC::bytes_to_float(uint8_t *s) {
     return f2b.value;
 }
 
-bool M5UnitBLDC::begin(TwoWire *wire, uint8_t addr, uint8_t sda, uint8_t scl,
-                       uint32_t speed) {
+bool M5UnitBLDC::begin(TwoWire *wire, uint8_t addr, uint8_t sda, uint8_t scl, uint32_t speed) {
     _wire  = wire;
     _addr  = addr;
     _sda   = sda;
@@ -217,8 +219,7 @@ uint8_t M5UnitBLDC::getMotorModel(void) {
 }
 
 bool M5UnitBLDC::setMotorPolePairs(uint8_t pairs) {
-    return writeBytes(_addr, UNIT_BLDC_MOTOR_CONFIG_REG + 1, (uint8_t *)&pairs,
-                      1);
+    return writeBytes(_addr, UNIT_BLDC_MOTOR_CONFIG_REG + 1, (uint8_t *)&pairs, 1);
 }
 
 uint8_t M5UnitBLDC::getMotorPolePairs(void) {

@@ -1,4 +1,10 @@
-/**
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
  * @file i2c_addr_modify.ino
  * @author SeanKwok (shaoxiang@m5stack.com)
  * @brief
