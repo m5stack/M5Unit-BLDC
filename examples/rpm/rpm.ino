@@ -87,6 +87,7 @@ void loop() {
     start_time = millis();
     while (millis() - start_time < 10000) {
         printMotorRPM();
+        sleep(1);
     }
 
     // before change motor direction you need set the PWM/RPM to 0
@@ -101,5 +102,6 @@ void loop() {
     start_time = millis();
     while (millis() - start_time < 10000) {
         printMotorRPM();
+        sleep(1);
     }
 }
